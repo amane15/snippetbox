@@ -1,0 +1,14 @@
+services:
+  mysql:
+    image: mysql:9
+    container_name: snippets_mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_snippets:/var/lib/mysql
+
+volumes:
+  mysql_snippets:
